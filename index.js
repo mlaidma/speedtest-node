@@ -4,15 +4,15 @@ var speedtest = require("speedtest-net");
 
 
 var DATA_PATH = __dirname + "/data/";
-var MAX_TIME = 5000;
-var MAX_SERVES = 1;
-var TEST_INTERVAL = 15000;
+var MAX_TIME = 10000;
+var MAX_SERVERS = 5;
+var TEST_INTERVAL = 1800000;
 
 
 function create_file(callback) {
 
 	let filename = get_todays_filename();
-	let csv_header = "TIME,HOST,PING,DOWNLOAD,UPLOAD\n";
+	let csv_header = "TIME,HOST,CLIENT,PING,DOWNLOAD,UPLOAD\n";
 
 	fs.appendFile(filename, csv_header, (err) => {
 
@@ -92,9 +92,10 @@ function run_tests() {
 
 	let options = {
 		maxTime: MAX_TIME,
-		maxServers: MAX_SERVES
+		maxServers: MAX_SERVERS
 	};
 
+	console.log("\n\n")
 	console.log("Running the speedtest.")
 	let test = speedtest(options);
 
