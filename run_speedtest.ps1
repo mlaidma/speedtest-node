@@ -1,1 +1,1 @@
-﻿node C:\Users\Priit\Documents\speedtest-project\index.js
+﻿node index.js
