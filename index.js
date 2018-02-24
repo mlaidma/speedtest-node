@@ -4,9 +4,9 @@ var speedtest = require("speedtest-net");
 
 
 var DATA_PATH = __dirname + "/data/";
-var MAX_TIME = 10000;
-var MAX_SERVERS = 5;
-var TEST_INTERVAL = 1800000;
+var MAX_TIME = 5000;
+var MAX_SERVERS = 1;
+var TEST_INTERVAL = 900000;
 
 
 function create_file(callback) {
